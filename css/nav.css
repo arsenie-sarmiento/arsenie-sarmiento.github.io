@@ -1,0 +1,239 @@
+:root {
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --text-primary: #ada7a7;
+    --text-secondary: #ffffff;
+    --bg-primary: #2c2b2b;
+    --bg-nav-primary: #091d24;
+    --bg-nav-secondary: #1b333b;
+    --background-secondary: #000000;
+    --icon-primary: #71d8f1;
+    --icon-secondary: #27778b;
+    --transition-speed: 0.3s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Albert Sans", sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--background-secondary);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #5451ec;
+}
+
+main, header, aside, footer {
+    /* margin-left: 5rem; */
+    padding: 1rem;
+}
+
+header, aside {
+    margin: 3em 2em;
+}
+
+
+aside {
+    align-items: center;
+    margin-bottom: 15vh;
+}
+
+.navbar {
+    position: fixed;
+    background-color: var(--bg-nav-primary);
+    /* MORE */
+    transition: 200ms ease;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-item {
+    width: 100%;
+    /* padding: 1em; */
+    text-align: center;
+}
+
+.nav-item:last-child {
+    margin-top: auto;
+}
+
+/* ICONS */
+.fa-primary, .link-text, .link-logo {
+    color:#a4b1b6;
+    font-size: 0.8rem;
+}
+
+.svg-inline--fa {
+    width: 30%;
+}
+
+/* NAVBAR TEXT LINKS */
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    /* style on hover */
+    filter: grayscale(100%) opacity(0.7);
+    /* hue-rotate(0deg); */
+    /* brightness: 1.2; */
+    transition: var(--transition-speed)
+}
+
+.link-text, .link-logo {
+    display: none;
+    margin-left: 1rem;
+}
+
+.nav-link svg {
+    max-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+/* STYLE ON HOVER */
+.fa-primary {
+    stroke: var(--icon-primary);
+    color: var(--icon-primary);
+}
+
+.fa-secondary {
+    stroke: var(--icon-secondary);
+    color: var(--icon-secondary);
+}
+
+.fa-primary, .fa-secondary  {
+    transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-nav-secondary);
+    color: var(--text-secondary);
+}
+
+/* SMALL SCREEN - Responsive */
+@media only screen and (max-width: 50em) {
+    header, main, aside {
+        /* width: 95vw; */
+        /* background-color: rgb(205, 50, 179); */
+    }
+
+    .content-container {
+        width: 95vw;
+        /* background-color: rgb(114, 139, 64); */
+    }
+
+    .navbar {
+        width: 100vw;
+        height: 5rem;
+        bottom: 0;
+    }
+
+    .link-logo img {
+        display: none;
+    }
+
+    .nav-link-logo {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    main {
+        margin: 3em 0;
+        /* max-height: ; */
+        /* padding: 1em 1em 10em 1em; */
+    }
+    nav {
+        margin-top: 13vh;
+    }
+
+}
+
+/* MID SCREEN - Responsive */
+@media only screen and (min-width: 50em) {
+    .content-container {
+        /* background-color: rgb(114, 139, 64); */
+        /* width: 80vw; */
+        max-width:100vw;
+    }
+
+    .navbar {
+        width: 5rem;
+        height: 100vh;
+        top: 0;
+        transition: width 200ms ease;
+    }
+
+    /* ANIMATION WHEN HOVERED */
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar:hover .link-text, .navbar:hover .link-logo {
+        display: inline;
+        transition: opacity var(--transition-speed);
+    }
+
+    .link-logo img {
+        width: 60%;
+    }
+    .nav-link-logo {
+        /* background-color: var(--background-secondary); */
+    }
+
+    .navbar:hover ~ .content-container {
+        /* margin-left: 5rem; */
+        /* width: 60vw; */
+    }
+}
+
+/* BIG SCREEN - Responsive */
+@media only screen and (min-width: 80em) {
+    .content-container {
+        width: 160em;
+        /* background-color: rgb(61, 54, 73); */
+    }
+
+    .navbar {
+        width: 16rem;
+    }
+
+    .navbar .link-text, .navbar .link-logo {
+        display: inline;
+        transition: opacity var(--transition-speed);
+    }
+
+    .link-logo img {
+        width: 60%;
+    }
+    .nav-link-logo {
+        /* background-color: var(--background-secondary); */
+    }
+}
